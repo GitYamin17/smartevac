@@ -111,16 +111,13 @@ function generateGrid() {
   { id: 108, x: 420, y: 100, w: 100, h: 60 },
 
   // CENTER HALLWAY (like a corridor down middle)
-  { id: 109, x: 300, y: 180, w: 100, h: 40 },
-  { id: 110, x: 420, y: 180, w: 100, h: 40 },
+  { id: 109, x: 300, y: 180, w: 100, h: 60 },
+  { id: 110, x: 420, y: 180, w: 100, h: 60 },
 
   // BOTTOM CENTRAL ROOMS
   { id: 111, x: 300, y: 240, w: 100, h: 60 },
   { id: 112, x: 420, y: 240, w: 100, h: 60 },
-
-  // MID CROSS HALL (wide corridor)
-  { id: 'Corridor1', x: 230, y: 320, w: 560, h: 40 },
-
+   
   // LOWER WING LEFT
   { id: 113, x: 100, y: 380, w: 90, h: 60 },
   { id: 114, x: 100, y: 460, w: 90, h: 60 },
