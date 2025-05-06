@@ -96,17 +96,43 @@ function generateGrid() {
     gridCells = [];
 
     const roomLayout = [
-        { id: 101, x: 100, y: 100, w: 80, h: 60 },
-        { id: 102, x: 200, y: 100, w: 100, h: 60 },
-        { id: 103, x: 320, y: 100, w: 80, h: 60 },
-        { id: 104, x: 100, y: 180, w: 80, h: 60 },
-        { id: 105, x: 200, y: 180, w: 80, h: 60 },
-        { id: 106, x: 320, y: 180, w: 120, h: 60 },
-        { id: 107, x: 460, y: 100, w: 80, h: 140 },
-        { id: 108, x: 560, y: 100, w: 100, h: 60 },
-        { id: 109, x: 560, y: 180, w: 100, h: 60 },
-        { id: 110, x: 680, y: 100, w: 80, h: 140 }
-    ];
+  // LEFT CLUSTER
+  { id: 101, x: 100, y: 100, w: 90, h: 60 },
+  { id: 102, x: 100, y: 180, w: 90, h: 60 },
+  { id: 103, x: 100, y: 260, w: 90, h: 60 },
+
+  // RIGHT CLUSTER
+  { id: 104, x: 700, y: 100, w: 90, h: 60 },
+  { id: 105, x: 700, y: 180, w: 90, h: 60 },
+  { id: 106, x: 700, y: 260, w: 90, h: 60 },
+
+  // TOP CENTRAL ROOMS
+  { id: 107, x: 300, y: 100, w: 100, h: 60 },
+  { id: 108, x: 420, y: 100, w: 100, h: 60 },
+
+  // CENTER HALLWAY (like a corridor down middle)
+  { id: 109, x: 300, y: 180, w: 100, h: 40 },
+  { id: 110, x: 420, y: 180, w: 100, h: 40 },
+
+  // BOTTOM CENTRAL ROOMS
+  { id: 111, x: 300, y: 240, w: 100, h: 60 },
+  { id: 112, x: 420, y: 240, w: 100, h: 60 },
+
+  // MID CROSS HALL (wide corridor)
+  { id: 'Corridor1', x: 230, y: 320, w: 560, h: 40 },
+
+  // LOWER WING LEFT
+  { id: 113, x: 100, y: 380, w: 90, h: 60 },
+  { id: 114, x: 100, y: 460, w: 90, h: 60 },
+
+  // LOWER WING RIGHT
+  { id: 115, x: 700, y: 380, w: 90, h: 60 },
+  { id: 116, x: 700, y: 460, w: 90, h: 60 },
+
+  // LARGE BACK ROOMS
+  { id: 117, x: 300, y: 400, w: 220, h: 100 },
+  { id: 118, x: 540, y: 400, w: 140, h: 100 }
+];
 
     roomLayout.forEach(room => {
         const count = Math.floor(Math.random() * 20);
