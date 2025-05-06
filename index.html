@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Evac - University Evacuation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <section id="login-section" class="active">
+        <div class="login-container">
+            <h1>Smart Evac</h1>
+            <form id="login-form" onsubmit="return handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard-section" class="hidden">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-brand">Smart Evac</div>
+            <ul class="nav-links">
+                <li><button onclick="showBuildings()" class="nav-btn">Buildings</button></li>
+                <li><button onclick="handleLogout()" class="nav-btn">Logout</button></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-content">
+            <!-- Buildings View -->
+            <div id="buildings-view" class="active">
+                <h2>Select a Building</h2>
+                <div class="building-cards">
+                    <div class="card">
+                        <h3>Main Building</h3>
+                        <p>Capacity: 500 people</p>
+                        <button onclick="showFloorPlan('main')" class="btn btn-secondary">View Floors</button>
+                    </div>
+                    <div class="card">
+                        <h3>Science Block</h3>
+                        <p>Capacity: 300 people</p>
+                        <button onclick="showFloorPlan('science')" class="btn btn-secondary">View Floors</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floor Plan View -->
+            <div id="floor-plan-view" class="hidden">
+                <div class="floor-plan-header">
+                    <h2 id="building-title">Main Building - Select a Floor</h2>
+                    <div class="floor-tabs">
+                        <button onclick="selectFloor(1)" class="tab active">Floor 1</button>
+                        <button onclick="selectFloor(2)" class="tab">Floor 2</button>
+                        <button onclick="selectFloor(3)" class="tab">Floor 3</button>
+                    </div>
+                </div>
+
+                <div class="floor-plan-container">
+                    <div class="grid-container" id="floor-grid">
+                        <!-- Grid will be populated by JavaScript -->
+                    </div>
+
+                    <!-- Side Panel -->
+                    <div class="side-panel">
+                        <h3>Controls</h3>
+                        <button onclick="simulateEvacuation()" class="btn btn-primary">Evacuate</button>
+                        <button onclick="simulateBlockPath()" class="btn btn-secondary">Block Path</button>
+                        <div class="status-info">
+                            <h4>Status</h4>
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <span class="status-dot safe"></span>
+                                    <span>Safe</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="status-dot congested"></span>
+                                    <span>Congested</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="status-dot hazard"></span>
+                                    <span>Hazard</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 
