@@ -115,8 +115,8 @@ function generateGrid() {
   { id: 110, x: 420, y: 180, w: 100, h: 60 },
 
   // BOTTOM CENTRAL ROOMS
-  { id: 111, x: 300, y: 240, w: 100, h: 60 },
-  { id: 112, x: 420, y: 240, w: 100, h: 60 },
+  { id: 111, x: 300, y: 260, w: 100, h: 60 },
+  { id: 112, x: 420, y: 260, w: 100, h: 60 },
    
   // LOWER WING LEFT
   { id: 113, x: 100, y: 380, w: 90, h: 60 },
@@ -127,8 +127,8 @@ function generateGrid() {
   { id: 116, x: 700, y: 460, w: 90, h: 60 },
 
   // LARGE BACK ROOMS
-  { id: 117, x: 300, y: 400, w: 220, h: 100 },
-  { id: 118, x: 540, y: 400, w: 140, h: 100 }
+  { id: 117, x: 300, y: 400, w: 140, h: 100 },
+  { id: 118, x: 500, y: 400, w: 140, h: 100 }
 ];
 
     roomLayout.forEach(room => {
