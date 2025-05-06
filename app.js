@@ -94,31 +94,41 @@ function selectFloor(floorNumber) {
 function generateGrid() {
     floorGrid.innerHTML = '';
     gridCells = [];
-    
-    const size = buildings[currentBuilding].gridSize;
-    
-    for (let i = 0; i < size * size; i++) {
+
+    const roomLayout = [
+        { id: 101, x: 100, y: 100, w: 80, h: 60 },
+        { id: 102, x: 200, y: 100, w: 100, h: 60 },
+        { id: 103, x: 320, y: 100, w: 80, h: 60 },
+        { id: 104, x: 100, y: 180, w: 80, h: 60 },
+        { id: 105, x: 200, y: 180, w: 80, h: 60 },
+        { id: 106, x: 320, y: 180, w: 120, h: 60 },
+        { id: 107, x: 460, y: 100, w: 80, h: 140 },
+        { id: 108, x: 560, y: 100, w: 100, h: 60 },
+        { id: 109, x: 560, y: 180, w: 100, h: 60 },
+        { id: 110, x: 680, y: 100, w: 80, h: 140 }
+    ];
+
+    roomLayout.forEach(room => {
+        const count = Math.floor(Math.random() * 20);
         const cell = document.createElement('div');
-        cell.className = 'grid-cell';
-        cell.innerHTML = `
-            <div>Room ${i + 1}</div>
-            <small>${Math.floor(Math.random() * 20)} people</small>
-        `;
-        
-        // Randomly assign initial states
-        const random = Math.random();
-        if (random > 0.8) {
-            cell.classList.add('hazard');
-        } else if (random > 0.6) {
-            cell.classList.add('congested');
-        } else {
-            cell.classList.add('safe');
-        }
-        
-        gridCells.push(cell);
+        cell.className = `grid-cell ${getStatusClass(count)}`;
+        cell.style.left = `${room.x}px`;
+        cell.style.top = `${room.y}px`;
+        cell.style.width = `${room.w}px`;
+        cell.style.height = `${room.h}px`;
+        cell.innerHTML = `<strong>Room ${room.id}</strong>${count} people`;
+
         floorGrid.appendChild(cell);
-    }
+        gridCells.push(cell);
+    });
 }
+
+function getStatusClass(count) {
+    if (count === 0) return 'safe';
+    if (count <= 4) return 'congested';
+    return 'hazard';
+}
+
 
 // Simulate evacuation
 function simulateEvacuation() {
