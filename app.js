@@ -128,7 +128,7 @@ function generateGrid() {
 
   // LARGE BACK ROOMS
   { id: 117, x: 300, y: 400, w: 140, h: 100 },
-  { id: 118, x: 420, y: 400, w: 140, h: 100 }
+  { id: 118, x: 490, y: 400, w: 140, h: 100 }
 ];
 
     roomLayout.forEach(room => {
